@@ -6,7 +6,7 @@ Uma função JavaScript é  um bloco de código projetado para executar uma tare
 
 Pode ser encarado como "mini-programas" projetados para fazer uma tarefa que vai contribuir para todo código
 
-Uma função JavaScript é exacutada quando "algo a invoca" (chama-a)
+Uma função JavaScript é executada quando "algo a invoca" (chama-a)
 
 */
 
