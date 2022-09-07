@@ -1,10 +1,8 @@
 /*  EVENTOS
-
 Eventos são ações disparadas pela interação dos usuários na página
 É o correto manejo desse eventos que tornam as páginas interativas e dinâmicas.
 
 Eventos mais utilizados:
-n
 */
 
 //onclick	-> Disparado quando recebe um click.
@@ -41,7 +39,7 @@ document.querySelector("campoTexto").addEventListener("focus", function () {
 
 });
 
-//onchange ->	Disparado quando existe uma mudança no conteúdo. "Ao mudar"
+//onchange -> Disparado quando existe uma mudança no conteúdo. "Ao mudar"
 const selectElement = document.querySelector('.sorvete');
 
 selectElement.addEventListener('change', (event) => {
@@ -103,7 +101,6 @@ window.addEventListener('resize',()=>{
 const texto = document.querySelector('#area')
 texto.addEventListener('mouseup', entrar)
 texto.addEventListener('mousedown', sair)
-
 
 function entrar() {
     texto.innerText = "mouseup!"
