@@ -1,4 +1,4 @@
-/*  EVENTOS
+/*  ARRAY
  Os arrays Javascript são usados para armazenar vários valores em uma única variável. 
  Diferente dos objetos, que funcionam com propriedades os "nomes" que você dá para os itens dentro dele,
  os arrays não possuem propriedades. O item dentro dele é encontrado pela posição.
