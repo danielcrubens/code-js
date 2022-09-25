@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+h1,h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0;
+}
+button{
+    width: 9rem;
+    height: 3rem;
+    cursor: pointer;
+}
+.start{
+    background: #00ad00;
+    color: #ffff;
+}
+.stop{
+    background: #f32c2c;
+    color: #ffff;
+
+}
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
