@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos</title>
+  <link rel="stylesheet" href="/css/efeitos.css">
+</head>
+
+<body>
+  <section>
+    <div class="red"></div>
+    <div class="blue"></div>
+    <div class="green"></div>
+      <button id="btnHide">Ocultar</button>
+      <button id="btnShow">Mostrar</button>
+      <button id="btnToggle">Clique aqui</button>
+  </section>
+    <div id="flip">Clique aqui para aparece o painel</div>
+    <div id="flipHide">Painel Oculto</div>
+
+    <section>
+      <div class="pink"></div>
+
+    </section>
+  <script src="js/jquery.min.js"></script>
+</body>
+
+<script>
+  //EFEITOS 
+  $(document).ready(function () {
+    $('#btnHide').click(function () {
+      $('.blue').hide(2000, function(){//callback, retorno da função
+        alert('Terminou de esconder')
+      })
+    })
+    $('#btnShow').click(function () {
+      $('.blue').show(2000)
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btnToggle').click(function () {
+      $('.blue').toggle(2000, function(){
+        alert('Terminou de esconder')
+      })
+    })
+  })
+  
+  $(document).ready(function () {
+    $('#btnToggle').click(function () {
+      $('.blue').fadeToggle(1000)
+    })
+  })
+
+  $(document).ready(function () {
+    $('#flip').click(function () {
+      $('#flipHide').slideToggle()
+    })
+  })
+
+  //ANIMAÇÕES
+  $(document).ready(function () {
+    $('.pink').click(function () {
+      $('.pink').animate({left: '250px'})
+    })
+  })
+
+
+//ENCADEAMENTO MÚLTIPLOS MÉTODOS NA MESMA DECLARAÇÃO
+$(document).ready(function () {
+    $('.pink').click(function () {
+      $(this).css('background-color','blue').slideUp(2000).slideDown(2000)
+    })
+  })
+
+</script>
+</html>

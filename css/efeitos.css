@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+}
+
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+div{
+  width: 150px;
+  height: 150px;
+}
+.red{
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.green{
+  background-color: green;
+}
+.pink{
+  background-color: pink;
+  cursor: pointer;
+  position: absolute; /* ou fixed ou relative */
+  top: 50%;
+
+}
+
+button{
+  padding: .4rem 1.5rem;
+  cursor: pointer;
+}
+#flip, #flipHide{
+  padding: 2.5rem;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 55px;
+  display: grid;
+  cursor: pointer;
+}
+#flipHide{
+  display: none;
+  padding: 50px;
+
+}
