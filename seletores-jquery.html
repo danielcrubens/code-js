@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulas Jquery | Seletores</title>
+</head>
+
+<body>
+  <!-- Seletor é uma forma de pegar um dos itens que está no html -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam id molestiae iusto quisquam delectus minima.</p>
+  <p id="teste">Isso é um parágrafo de teste</p>
+  <p class="p-red">Outro parágrafo</p>
+  <div class="p-red">Texro dentro de uma  div</div>
+
+  <script src="/js/jquery.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      $('p').html('Inserido com JQuery tag')
+      $('#teste').html('Inserido com JQuery id')
+      $('.p-red').html('Inserido com JQuery class')
+      $('p.p-red').html('Inserido com JQuery tag e class')
+      $('div.p-red').html('Inserido com JQuery div')
+
+
+    }) 
+  </script>
+</body>
+
+</html>
