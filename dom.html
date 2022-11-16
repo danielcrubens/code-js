@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulando o DOM</title>
+  <link rel="stylesheet" href="/css/efeitos.css">
+</head>
+<style>
+  .pink{
+    background: pink;
+  }
+  .purple{
+    background: purple;
+  }
+</style>
+
+<body style="text-align: center;">
+  <h1> O JQuery pode manipular o DOM</h1>
+  <h2>DOM = Document Object Model</h2>
+  <p>Em outras palavras é a árvore de elemntos do nosso código. O JQuery pode acessar e atualizar dinamicamente o
+    conteúdo,<br>
+    a estrutura e o estilo de um documento. Tudo pode ser modificado, adicionado ou removido usando JQuery
+  </p>
+  <main style="display:inline-grid;padding: 2rem;gap: 1rem;">
+    <input id="texto" type="text" placeholder="Digite algo ...">
+    <a id="link" href="https://gooogle.com.br">Link Google</a>
+
+    <img  src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" alt=""><br><br><br>
+    <div id="teste">
+      <p>Paragrafo</p>
+      <p>Paragrafo</p>
+      <p>Paragrafo</p>
+      <p>Paragrafo</p>
+    </div>
+
+
+
+    <button id="btn1">Modificar Título H1</button>
+    <button id="btn2">Modificar Título H2</button>
+    <button id="btn3">Atribuir valor ao Input</button>
+    <button id="btn4">Trocar link</button>
+    <button id="btn5">Trocar imagem</button>
+    <button id="btn6">Adicionar elemento</button>
+    <button id="btn7">Deletar Título</button>
+    <button id="btn8">Esvaziar Div</button>
+    <hr>
+    <button id="btn9">Modificar CSS</button>
+    <button id="btn10">Adicionar classe </button>
+    <button id="btn11">Remover classe </button>
+    <button id="btn12">Toggle classe </button>
+    <button id="btn13">Tamanho imagem </button>
+
+
+
+
+
+
+  </main>
+
+
+  <script src="js/jquery.min.js"></script>
+</body>
+
+<script>
+
+  $(document).ready(function () {
+    $('#btn1').click(function () {
+      $('h1').text('Mudei o texto com JQuery')
+      $('h1').prepend('Mudei o texto com JQuery')// colocar elemento antes
+      $('h1').append('Mudei o texto com JQuery')// colocar elemento depois
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn2').click(function () {
+      $('h2').html('<b>Mudei o texto</b> com <i>JQuery</i>')// no método html eu posso passar tags
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn3').click(function () {
+      $('#texto').val('Daniel C Rubens')
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn4').click(function () {
+      $('#link').text('Ir para portfólio')
+      $('#link').attr('href', 'https://danielcrubens.github.io')
+    })
+  })
+  $(document).ready(function () {
+    $('#btn5').click(function () {
+      $('img').attr('src', 'https://nathanchapman.gallerycdn.vsassets.io/extensions/nathanchapman/javascriptsnippets/0.4.0/1662005716702/Microsoft.VisualStudio.Services.Icons.Default')
+    })
+  })
+  $(document).ready(function () {
+    $('#btn6').click(function () {
+      $('body').append(' <div style= "width:150px;height:150px;display:inline-block; background:red;">') //adiciona um novo item novo mesmo lugar
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn7').click(function () {
+      $('h1').remove() 
+    })
+  })
+
+  
+  $(document).ready(function () {
+    $('#btn8').click(function () {
+      $('#teste').empty() 
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn9').click(function () {
+      $('body').css('background','#000') 
+      $('body').addClass('.pink') 
+
+    })
+  })
+  $(document).ready(function () {
+    $('#btn10').click(function () {
+      $('#link').addClass('pink') 
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn11').click(function () {
+      $('#link').removeClass('pink') 
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn12').click(function () {
+      $('#link').toggleClass('purple') 
+    })
+  })
+
+  $(document).ready(function () {
+    $('#btn13').click(function () {
+      let larguraImg= $('img').width() 
+      let alturaImg= $('img').height() 
+      alert(`A largura é ${larguraImg}px e a altura${alturaImg}px`)
+    })
+  })
+</script>
+
+</html>
