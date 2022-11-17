@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax</title>
+  <link rel="stylesheet" href="/css/efeitos.css">
+</head>
+
+
+<body>
+  <h1> O Ajax trata de carregar dados em segundo plano e exibi-los na página da web, sem recaregar a página inteira</h1>
+
+
+  <div class="teste">
+    <p> Um conteúdo inicial</p>
+  </div>
+  <button id="btn">Clique para carregar conteúdo externo</button><br>
+
+  <input id="cep" type="text" placeholder="CEP">
+  <input id="cidade" type="text" placeholder="Cidade">
+  <input id="uf" type="text" placeholder="UF">
+
+
+
+  <script src="js/jquery.min.js"></script>
+</body>
+
+<script>
+
+  $(document).ready(function () {
+    $("#btn").click(function () {
+      $("#teste").load("ajax.txt")
+      console.log('entrou')
+    })
+  })
+
+  $(document).ready(function () {
+    $('#cep').blur(function () {
+      let valor = $(this).val()
+      $.get(`https://viacep.com.br/ws/${valor}/json/`, function (dados, status) {
+        console.log(dados)
+        if (status == 'success') {
+          $('#cidade').val(dados.localidade)
+          $('#uf').val(dados.uf)
+        }
+        else {
+          alert('Houve um problema inesperado!')
+        }
+      })
+    })
+    $.post("https://danielcrubens.github.io", { nome: "Daniel", idade: 33 }, function (dados, status) {
+      //código...
+    })
+    $.ajax({
+      url: `https://viacep.com.br/ws/${valor}/json/`,
+      type: "GET",
+      success: function (dados, status) {
+        $('#cidade').val(dados.localidade)
+        $('#uf').val(dados.uf)
+      },
+      error: function () {
+        alert('Houve um problema inesperado!')
+
+      }
+    })
+  })
+
+</script>
+
+</html>
