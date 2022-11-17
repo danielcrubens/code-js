@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter</title>
+  <link rel="stylesheet" href="/css/efeitos.css">
+</head>
+
+<style>
+  input{
+    padding: .5rem 0;
+    margin: .5rem 4.3rem;
+    width: auto;
+  }
+  table {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  th {
+    border: 1px solid #C0C0C0;
+    padding: 5px;
+    background: #C0C0C0;
+    margin: 0 auto;
+  }
+
+  td,
+  tr {
+    border: 1px solid #C0C0C0;
+    padding: 5px;
+    text-align: center;
+  }
+</style>
+
+<body>
+
+  <input id="busca" type="text" placeholder="Buscar na Tabela">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody id="MinhaTabela">
+      <tr>
+        <td>Daniel</td>
+        <td>Rubens</td>
+        <td>meu@email.com</td>
+      </tr>
+      <tr>
+        <td>Lívia</td>
+        <td>Rodrigues</td>
+        <td>livia@email.com.br</td>
+      </tr>
+      <tr>
+        <td>Gabriel</td>
+        <td>Costa</td>
+        <td>gcr@gmail.com</td>
+      </tr>
+      <tr>
+        <td>João</td>
+        <td>Silva</td>
+        <td>silva@email.coms</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="js/jquery.min.js"></script>
+</body>
+
+<script>
+$(document).ready(function (){
+  $('#busca').on('keyup', function(){
+    let valor = $(this).val().toLowerCase()
+
+    $('#MinhaTabela tr').filter(function(){
+      $(this).toggle($(this).text().toLocaleLowerCase().indexOf(valor) > -1)
+    })
+  })
+})
+
+</script>
+
+</html>
